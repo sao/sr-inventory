@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.6'
 
 # database
-gem 'sqlite3'
+gem 'pg'
 
 # assets
 gem 'jquery-rails'
@@ -15,9 +15,13 @@ gem 'bootstrap-sass', '~> 3.0'
 # auth
 gem 'devise'
 
+# admin
+gem 'upmin-admin'
+
 group :development, :test do
   gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
   gem 'pry-byebug'
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -27,4 +31,14 @@ group :development do
   gem 'rack-mini-profiler'
   gem 'quiet_assets'
   gem 'letter_opener'
+end
+
+group :test do
+  gem 'rspec-rails'
+  gem 'spork-rails', :github => 'sporkrb/spork-rails'
+  gem 'guard-spork'
+  gem 'shoulda'
+  gem 'shoulda-matchers', '< 2.6.0'
+  gem 'factory_girl_rails', '4.4.1'
+  gem 'database_cleaner'
 end
