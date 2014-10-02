@@ -1,0 +1,27 @@
+<%= button_to "Add Item", new_item_url, class: 'btn btn-link pull-right' %>
+
+<table class="table table-striped">
+  <tr>
+    <th>Number</th>
+    <th>Vendor</th>
+    <th>Description</th>
+    <th>per unit</th>
+    <th>unit of measure</th>
+    <th></th>
+  </tr>
+
+  <% @items.each do |i| %>
+    <tr>
+      <td><%= i.number %></td>
+      <td><%= i.vendor %></td>
+      <td><%= i.description %></td>
+      <td><%= i.per_unit %></td>
+      <td><%= i.unit_of_measure %></td>
+      <td>
+        <%= link_to item_path(i), method: :destroy do %>
+          <span class="glyphicon glyphicon-trash"></span>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
