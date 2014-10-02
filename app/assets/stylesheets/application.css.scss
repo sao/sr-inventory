@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+$link_color: #555555;
+@import "bootstrap-sprockets";
 @import "bootstrap";
 
 body {
