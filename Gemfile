@@ -12,11 +12,9 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap-sass', '~> 3.0'
 
-# auth
+# uac
 gem 'devise'
-
-# admin
-gem 'upmin-admin'
+gem 'cancancan'
 
 group :development, :test do
   gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
@@ -35,7 +33,9 @@ end
 
 group :test do
   gem 'rspec-rails'
-  gem 'spork-rails', :github => 'sporkrb/spork-rails'
+  gem 'minitest'
+  gem 'spork', github: 'sao/spork'
+  gem 'spork-rails'
   gem 'guard-spork'
   gem 'shoulda'
   gem 'shoulda-matchers', '< 2.6.0'
