@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+  title Stockdale Radiology
+  = stylesheet_link_tag 'application'
+  = javascript_include_tag 'application'
+  = csrf_meta_tags
+
+body
+
+.container
+  -if user_signed_in?
+    = render 'nav'
+
+  .row
+    = flash_helper
+
+  header.row
+      = render 'header'
+
+  main.row
+    .col-lg-12
+      = yield

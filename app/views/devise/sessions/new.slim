@@ -1,0 +1,24 @@
+.well.col-lg-4.col-lg-offset-4
+  h2 Log in
+
+  = flash_helper
+
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .form-group
+      = f.label :email, class: 'control-label'
+      = f.email_field :email, autofocus: true, class: 'form-control'
+
+    .form-group
+      = f.label :password, class: 'control-label'
+      = f.password_field :password, autocomplete: "off", class: 'form-control'
+
+    -if devise_mapping.rememberable?
+    .checkbox
+      label
+        = f.check_box :remember_me
+        | Remember me
+
+    .form-group
+      = f.submit "Log in", class: 'btn btn-default'
+
+  = render "devise/shared/links"

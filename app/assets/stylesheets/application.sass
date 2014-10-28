@@ -14,10 +14,18 @@
  *= require_self
  */
 
-$link_color: #555555;
-@import "bootstrap-sprockets";
-@import "bootstrap";
+$font-size-base: 14px
+$link_color: #555555
 
-body {
-  padding: 40px 0;
-}
+@import "bootstrap-sprockets"
+@import "bootstrap"
+
+body
+  padding: 40px 0
+
+.alert-notice
+  @extend .alert-warning
+
+header
+  a.btn
+    margin: 20px 0 20px

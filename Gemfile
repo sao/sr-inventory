@@ -11,15 +11,18 @@ gem 'jquery-rails'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap-sass', '~> 3.0'
+gem 'slim-rails'
 
 # uac
 gem 'devise'
 gem 'cancancan'
 
+# forms
+gem 'simple_form'
+
 group :development, :test do
-  gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
-  gem 'pry-byebug'
-  gem 'dotenv-rails'
+  gem 'jazz_hands', github: 'jkrmr/jazz_hands', branch: 'byebug_and_updated_pry'
+  gem 'figaro'
 end
 
 group :development do
@@ -33,7 +36,6 @@ end
 
 group :test do
   gem 'rspec-rails'
-  gem 'minitest'
   gem 'spork', github: 'sao/spork'
   gem 'spork-rails'
   gem 'guard-spork'

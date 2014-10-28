@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20141002080014) do
     t.integer  "item_id"
     t.integer  "user_id"
     t.string   "adjustment_type"
+    t.integer  "quantity"
     t.string   "patient_number"
     t.text     "notes"
     t.datetime "date"

@@ -4,6 +4,7 @@ class CreateItemEntries < ActiveRecord::Migration
       t.references :item
       t.references :user
       t.string :adjustment_type
+      t.integer :quantity
       t.string :patient_number
       t.text :notes
       t.datetime :date

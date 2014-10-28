@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @items = Item.all
   end
@@ -31,9 +33,19 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @item = Item.find params[:id]
+
+    if @item.destroy
+      redirect_to items_path, notice: "Item has been deleted."
+    else
+      redirect_to items_path, error: "There was a problem deleting this item."
+    end
+  end
+
   private
 
     def item_params
-      params.require(:item).permit([:number, :vendor, :description])
+      params.require(:item).permit!
     end
 end

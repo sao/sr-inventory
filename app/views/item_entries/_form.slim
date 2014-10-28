@@ -1,0 +1,7 @@
+= form_for @item_entry, html: { class: 'form-horizontal' } do |f|
+  = errors_for @item_entry
+
+  .form-group
+    = f.label :patient_number, "Patient Number", class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :patient_number, class: 'form-control'
