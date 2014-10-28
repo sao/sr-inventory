@@ -8,6 +8,7 @@ gem 'pg'
 
 # assets
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap-sass', '~> 3.0'
@@ -15,7 +16,7 @@ gem 'slim-rails'
 
 # uac
 gem 'devise'
-gem 'cancancan'
+gem 'pundit'
 
 group :development, :test do
   gem 'jazz_hands', github: 'jkrmr/jazz_hands', branch: 'byebug_and_updated_pry'

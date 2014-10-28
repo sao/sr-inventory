@@ -12,11 +12,10 @@ body
   -if user_signed_in?
     = render 'nav'
 
-  .row
     = flash_helper
 
-  header.row
-      = render 'header'
+    header.row
+        = render 'header'
 
   main.row
     .col-lg-12
