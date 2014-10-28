@@ -2,6 +2,23 @@
   = errors_for @item_entry
 
   .form-group
+    = f.label :date, "Date", class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :date, class: 'form-control'
+  .form-group
+    = f.label :adjustment_type, "Adjustment type", class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :adjustment_type, class: 'form-control'
+  .form-group
+    = f.label :quantity, "Quantity", class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :quantity, class: 'form-control'
+  .form-group
     = f.label :patient_number, "Patient Number", class: 'col-sm-2 control-label'
     .col-sm-10
       = f.text_field :patient_number, class: 'form-control'
+
+  .form-group
+   .col-lg-6.col-lg-offset-2
+     = f.submit "Add Item Entry", class: 'btn btn-primary'
+     = link_to "Cancel", items_path, class: 'btn btn-link'

@@ -17,9 +17,6 @@ gem 'slim-rails'
 gem 'devise'
 gem 'cancancan'
 
-# forms
-gem 'simple_form'
-
 group :development, :test do
   gem 'jazz_hands', github: 'jkrmr/jazz_hands', branch: 'byebug_and_updated_pry'
   gem 'figaro'
