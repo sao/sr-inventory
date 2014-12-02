@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # core
-gem 'rails', '4.1.6'
+gem 'rails', '4.1.8'
 
 # database
 gem 'pg'
@@ -25,6 +25,8 @@ end
 
 group :development do
   gem 'thin'
+  gem 'spring'
+  gem 'spring-commands-rspec'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'rack-mini-profiler'
@@ -34,9 +36,6 @@ end
 
 group :test do
   gem 'rspec-rails'
-  gem 'spork', github: 'sao/spork'
-  gem 'spork-rails'
-  gem 'guard-spork'
   gem 'shoulda'
   gem 'shoulda-matchers', '< 2.6.0'
   gem 'factory_girl_rails', '4.4.1'
