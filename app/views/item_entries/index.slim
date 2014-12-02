@@ -1,17 +1,19 @@
 - if @item_entries.count > 0
   table.table.table-striped
     tr
-      th Date
+      th width="10%" Date
       th width="15%" User
-      th width="40%" Type
+      th width="20%" Item
+      th width="20%" Type
       th Quantity
-      th Patient
+      th width="15%" Patient
       th width="100px"
 
     - @item_entries.each do |item_entry|
       tr
         td= item_entry.date
-        td= item_entry.user
+        td= item_entry.user.full_name
+        td= item_entry.item.description
         td= item_entry.adjustment_type
         td= item_entry.quantity
         td= item_entry.patient_number

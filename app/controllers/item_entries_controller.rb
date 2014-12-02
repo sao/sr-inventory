@@ -9,6 +9,7 @@ class ItemEntriesController < ApplicationController
 
   def create
     @item_entry = ItemEntry.new item_entry_params
+    @item_entry.user = current_user
 
     if @item_entry.save
       redirect_to item_entries_path, notice: "Item entry created successfully."

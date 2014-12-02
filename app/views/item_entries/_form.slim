@@ -4,11 +4,15 @@
   .form-group
     = f.label :date, "Date", class: 'col-sm-2 control-label'
     .col-sm-10
-      = f.text_field :date, class: 'datepicker form-control'
+      = f.text_field :date, value: @item_entry.date, class: 'datepicker form-control'
+  .form-group
+    = f.label :item, "Item", class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.select :item_id, Item.all.collect {|i| [ i.description, i.id ] }, { include_blank: true }, class: 'form-control'
   .form-group
     = f.label :adjustment_type, "Adjustment type", class: 'col-sm-2 control-label'
     .col-sm-10
-      = f.text_field :adjustment_type, class: 'form-control'
+      = f.select :adjustment_type, ItemEntry.adjustment_types, { include_blank: true }, class: 'form-control'
   .form-group
     = f.label :quantity, "Quantity", class: 'col-sm-2 control-label'
     .col-sm-10
@@ -20,5 +24,8 @@
 
   .form-group
    .col-lg-6.col-lg-offset-2
-     = f.submit "Add Item Entry", class: 'btn btn-primary'
+     - if params[:action] == 'new'
+       = f.submit "Add Item Entry", class: 'btn btn-primary'
+     - else
+       = f.submit "Edit Item Entry", class: 'btn btn-primary'
      = link_to "Cancel", items_path, class: 'btn btn-link'

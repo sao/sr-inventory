@@ -20,9 +20,12 @@
   .form-group
     = f.label :unit_of_measure, "Unit of Measure", class: 'col-sm-2 control-label'
     .col-sm-10
-      = f.select :unit_of_measure, options_for_select(["test", "test2"]), {}, { class: 'form-control' }
+      = f.select :unit_of_measure, Item.units_of_measurement, { include_blank: true }, { class: 'form-control' }
 
   .form-group
    .col-lg-6.col-lg-offset-2
-     = f.submit "Add Item", class: 'btn btn-primary'
+     - if params[:action] == 'new'
+       = f.submit "Add Item", class: 'btn btn-primary'
+     - else
+       = f.submit "Edit Item", class: 'btn btn-primary'
      = link_to "Cancel", items_path, class: 'btn btn-link'
